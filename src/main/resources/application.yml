@@ -1,0 +1,85 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: user1
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  application:
+    name: dailySpringRest
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    password: Siva@9484
+    url: jdbc:mariadb://127.0.0.1:3306/practice
+    username: siva
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Hii welcome to hello controller...
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          "*"
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: user1
+  application:
+    name: dailySpringRest
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    password: Siva@9484
+    url: jdbc:mariadb://127.0.0.1:3306/practiceUser1
+    username: siva
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Hii welcome to hello controller...
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          "*"
+---
+
+spring:
+  config:
+    activate:
+      on-profile: user2
+  application:
+    name: dailySpringRest
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    password: Siva@9484
+    url: jdbc:mariadb://127.0.0.1:3306/practiceUser2
+    username: siva
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Hii welcome to hello controller...
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          "*"
